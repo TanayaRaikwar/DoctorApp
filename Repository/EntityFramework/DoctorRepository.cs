@@ -38,6 +38,36 @@ namespace DoctorApp.Repository
             return doctorToBeDeleted;
         }
 
+        public List<Doctor> GetAllDoctors()
+        {
+            return _context.Doctors.ToList();
+        }
+        public List<Specialization> GetAllSpecializations()
+        {
+            return _context.Specializations.ToList();
+        }
+        public List<DoctorSpecialization> GetDoctorsBySpecialization()
+        {
+            return _context.DoctorSpecializations.ToList();
+        }
+        public List<Surgery> GetAllSurgeryTypeForToday()
+        {
+            return _context.Surgeries.ToList();
+        }
+
+        public Surgery AddSurgery(Surgery surgery)
+        {
+            _context.Surgeries.Add(surgery);
+            _context.SaveChanges();
+            return surgery;
+        }
+
+        public Surgery UpdateSurgery(Surgery surgery) 
+        {
+            _context.Surgeries.Update(surgery);
+            _context.SaveChanges();
+            return surgery;
+        }
         public Specialization AddSpecialization(Specialization specialization)
         {
             _context.Specializations.Add(specialization);

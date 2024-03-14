@@ -1,16 +1,19 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DoctorApp.Models
 {
     public class DoctorSpecialization
     {
+        [ForeignKey("Doctor")]
         public int DoctorId {get; set;}
-        public int SpecializationCode {get; set;}
-        public DateOnly SpecializationDate {get; set;}
-        [ForeignKey("DoctorId")]
         public Doctor Doctor { get; set; }
 
-        [ForeignKey("SpecializationCode")]
+        [ForeignKey("Specialization")]
+        public string SpecializationCode {get; set;}
         public Specialization Specialization { get; set; }
+
+        [Required(ErrorMessage = "Specialization Date is required")]
+        public DateOnly SpecializationDate {get; set;}
     }
 }
