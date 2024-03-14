@@ -37,6 +37,13 @@ namespace DoctorApp.Repository
             return doctorToBeDeleted;
         }
 
+        public string AddSurgery(Doctor doctor)
+        {
+            _context.Doctors.Add(doctor);
+            _context.SaveChanges();
+            return doctor.DoctorName;
+        }
+
         
     }
 }
