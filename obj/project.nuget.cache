@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "q9t64jBGtlU7G/rOBRP8EpmrUt6voSAcRuWpj1EVHUc9CbH0QEegm0mdvP9sX33ErXye+1UD7ibkumVBosl05Q==",
+  "dgSpecHash": "chQSTbKpu2DPjCvcO5u/dsAtwJhrdWtpUDSGjyWl8Bp4lSN/h7qSJOzJm/wKe1TYOjyIYDaIgtft0KeWxsxPiQ==",
   "success": true,
-  "projectFilePath": "D:\\Dotnet\\Project\\DoctorApp\\DoctorApp.csproj",
+  "projectFilePath": "D:\\Dotnet\\Project\\github\\DoctorApp\\DoctorApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sanika.shinde\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\sanika.shinde\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\sanika.shinde\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.9\\microsoft.aspnetcore.openapi.7.0.9.nupkg.sha512",
     "C:\\Users\\sanika.shinde\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",

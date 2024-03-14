@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dotnet\\Project\\DoctorApp\\DoctorApp.csproj": {}
+    "D:\\Dotnet\\Project\\github\\DoctorApp\\DoctorApp.csproj": {}
   },
   "projects": {
-    "D:\\Dotnet\\Project\\DoctorApp\\DoctorApp.csproj": {
+    "D:\\Dotnet\\Project\\github\\DoctorApp\\DoctorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet\\Project\\DoctorApp\\DoctorApp.csproj",
+        "projectUniqueName": "D:\\Dotnet\\Project\\github\\DoctorApp\\DoctorApp.csproj",
         "projectName": "DoctorApp",
-        "projectPath": "D:\\Dotnet\\Project\\DoctorApp\\DoctorApp.csproj",
+        "projectPath": "D:\\Dotnet\\Project\\github\\DoctorApp\\DoctorApp.csproj",
         "packagesPath": "C:\\Users\\sanika.shinde\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet\\Project\\DoctorApp\\obj\\",
+        "outputPath": "D:\\Dotnet\\Project\\github\\DoctorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sanika.shinde\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.9, )"
