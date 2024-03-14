@@ -13,5 +13,12 @@ namespace DoctorApp.Database
        {
 
        }
+
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DoctorSpecialization>()
+                .HasKey(ds => new { ds.DoctorId, ds.SpecializationCode }); 
+
+        }
     }
 }
