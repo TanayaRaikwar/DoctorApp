@@ -12,6 +12,11 @@ namespace DoctorApp.Repository
         public Specialization UpdateSpecialization(Specialization specialization);
         public Specialization DeleteSpecialization(int id);
         public List<Specialization> GetAllSpecializations();
-        
+
+        public List<DoctorSpecialization> GetDoctorsBySpecialization();
+        public List<Surgery> GetAllSurgeryTypeForToday();
+        public Surgery AddSurgery(Surgery surgery);
+        public Surgery UpdateSurgery(Surgery surgery);
+        public Surgery DeleteSurgery(int id);
     }
 }

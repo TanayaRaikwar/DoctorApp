@@ -23,6 +23,27 @@ namespace DoctorApp.Services
             return _doctorRepository.DeleteDoctor(id);
         }
 
+        public List<DoctorSpecialization> GetDoctorsBySpecialization()
+        {
+            return _doctorRepository.GetDoctorsBySpecialization();
+        }
+        public List<Surgery> GetAllSurgeryTypeForToday()
+        {
+            return _doctorRepository.GetAllSurgeryTypeForToday();
+        }
+
+        public Surgery AddSurgery(Surgery surgery)
+        {
+            return _doctorRepository.AddSurgery(surgery);
+        }
+        public Surgery UpdateSurgery(Surgery surgery)
+        {
+            return _doctorRepository.UpdateSurgery(surgery);
+        }
+        public Surgery DeleteSurgery(int id)
+        {
+            return _doctorRepository.DeleteSurgery(id);
+        }
         public Specialization AddSpecialization(Specialization specialization)
         {
             return _doctorRepository.AddSpecialization(specialization);

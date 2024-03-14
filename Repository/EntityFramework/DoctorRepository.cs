@@ -1,6 +1,7 @@
 using DoctorApp.Database;
 using DoctorApp.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoctorApp.Repository
 {
@@ -20,6 +21,8 @@ namespace DoctorApp.Repository
         }
         public Doctor UpdateDoctor(Doctor doctor)
         {
+            // Update the properties of the existing doctor with the new values
+            _context.Entry(doctor).State = EntityState.Modified;
             _context.Doctors.Update(doctor);
             _context.SaveChanges();
             return doctor;
@@ -38,21 +41,15 @@ namespace DoctorApp.Repository
             return doctorToBeDeleted;
         }
 
-        public List<Doctor> GetAllDoctors()
-        {
-            return _context.Doctors.ToList();
-        }
-        public List<Specialization> GetAllSpecializations()
-        {
-            return _context.Specializations.ToList();
-        }
         public List<DoctorSpecialization> GetDoctorsBySpecialization()
         {
             return _context.DoctorSpecializations.ToList();
         }
         public List<Surgery> GetAllSurgeryTypeForToday()
         {
-            return _context.Surgeries.ToList();
+            return _context.Surgeries
+            .Include(surgery => surgery.Doctor)
+            .ToList();
         }
 
         public Surgery AddSurgery(Surgery surgery)
@@ -62,12 +59,29 @@ namespace DoctorApp.Repository
             return surgery;
         }
 
-        public Surgery UpdateSurgery(Surgery surgery) 
+        public Surgery UpdateSurgery(Surgery surgery)
         {
+            // Update the properties of the existing doctor with the new values
+            _context.Entry(surgery).State = EntityState.Modified;
             _context.Surgeries.Update(surgery);
             _context.SaveChanges();
             return surgery;
         }
+
+        public Surgery DeleteSurgery(int id)
+        {
+            var surgeryToBeDeleted = _context.Surgeries.Find(id);
+
+            if (surgeryToBeDeleted == null)
+            {
+                return null;
+            }
+            _context.Surgeries.Remove(surgeryToBeDeleted);
+            _context.SaveChanges();
+
+            return surgeryToBeDeleted;
+        }
+
         public Specialization AddSpecialization(Specialization specialization)
         {
             _context.Specializations.Add(specialization);
@@ -77,6 +91,9 @@ namespace DoctorApp.Repository
 
         public Specialization UpdateSpecialization(Specialization specialization)
         {
+            // Update the properties of the existing doctor with the new values
+            _context.Entry(specialization).State = EntityState.Modified;
+
             _context.Specializations.Update(specialization);
             _context.SaveChanges();
             return specialization;
@@ -100,7 +117,6 @@ namespace DoctorApp.Repository
         {
             return _context.Doctors.ToList();
         }
-
         public List<Specialization> GetAllSpecializations()
         {
             return _context.Specializations.ToList();

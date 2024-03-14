@@ -13,7 +13,11 @@ namespace DoctorApp.Services
         public List<Doctor> GetAllDoctors();
         public List<Specialization> GetAllSpecializations();
 
-    
+        public List<DoctorSpecialization> GetDoctorsBySpecialization();
+        public List<Surgery> GetAllSurgeryTypeForToday();
+        public Surgery AddSurgery(Surgery surgery);
+        public Surgery UpdateSurgery(Surgery surgery);
+        public Surgery DeleteSurgery(int id);
 
     }
 }
