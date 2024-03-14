@@ -1,14 +1,50 @@
 using DoctorApp.Models;
+using DoctorApp.Repository;
 
 namespace DoctorApp.Services
 {
-    public class DoctorService
+    public class DoctorService : IDoctorService
     {
-        // public Doctor CreateDoctor(Doctor doctor, string userName)
-        // {
-        //     var createdVendor = _vendorRepository.Add(vendor);
-        //     vendor.SetCreationInfo(DateTime.UtcNow, userName);
-        //     return createdVendor;
-        // }
+        private readonly IDoctorRepository _doctorRepository;
+        public DoctorService(IDoctorRepository doctorRepository)
+        {
+            _doctorRepository = doctorRepository;
+        }
+        public bool AddDoctor(Doctor doctor)
+        {
+            return _doctorRepository.AddDoctor(doctor);
+        }
+        public Doctor UpdateDoctor(Doctor doctor)
+        {
+            return _doctorRepository.UpdateDoctor(doctor);
+        }
+        public Doctor DeleteDoctor(int id)
+        {
+            return _doctorRepository.DeleteDoctor(id);
+        }
+
+        public Specialization AddSpecialization(Specialization specialization)
+        {
+            return _doctorRepository.AddSpecialization(specialization);
+        }
+
+        public Specialization UpdateSpecialization(Specialization specialization)
+        {
+            return _doctorRepository.UpdateSpecialization(specialization);
+        }
+
+        public Specialization DeleteSpecialization(int id)
+        {
+            return _doctorRepository.DeleteSpecialization(id);
+        }
+        public List<Doctor> GetAllDoctors()
+        {
+            return _doctorRepository.GetAllDoctors();
+        }
+        public List<Specialization> GetAllSpecializations()
+        {
+            return _doctorRepository.GetAllSpecializations();
+        }
+        
     }
 }
