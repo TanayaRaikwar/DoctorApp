@@ -37,15 +37,6 @@ namespace DoctorApp.Repository
 
             return doctorToBeDeleted;
         }
-
-        public List<Doctor> GetAllDoctors()
-        {
-            return _context.Doctors.ToList();
-        }
-        public List<Specialization> GetAllSpecializations()
-        {
-            return _context.Specializations.ToList();
-        }
         public List<DoctorSpecialization> GetDoctorsBySpecialization()
         {
             return _context.DoctorSpecializations.ToList();
