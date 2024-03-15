@@ -43,7 +43,9 @@ namespace DoctorApp.Repository
 
         public List<DoctorSpecialization> GetDoctorsBySpecialization()
         {
-            return _context.DoctorSpecializations.ToList();
+            return _context.DoctorSpecializations
+            .Include(doc => doc.Doctor).Include(doc=> doc.Specialization)
+            .ToList();
         }
         public List<Surgery> GetAllSurgeryTypeForToday()
         {
